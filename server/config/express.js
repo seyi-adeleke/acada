@@ -7,10 +7,16 @@ var morgan       = require('morgan');
 var flash =  require('connect-flash');
 
 
-module.exports = function(app,config){
+module.exports = function(app,config,passport){
     app.use(morgan('dev'));
     app.use(cookieParser());
     app.use(bodyParser());
+
+    app.use(session({ secret:"THESESSIONSECRETISTHISSTRING" }));
+    app.use(passport.initialize());
+    app.use(passport.session());
+    app.use(flash());
+
 
     app.use('/public', express.static(path.join(config.rootPath +'public')));
     app.set('views','./src/views');
