@@ -3,13 +3,13 @@ var rootPath = path.normalize(__dirname + "/../../");
 
 module.exports = {
     development:{
-        db:"mongodb://localhost/standupdatabase",
+        db:"mongodb://localhost/acada",
         rootPath:rootPath,
         port:process.env.PORT||9000
 
     },
     production:{
-        db:"mongodb://adetokunbo:abachaforpresident@ds011913.mlab.com:11913/multivision",
+        db:process.env.DB,
         rootPath:rootPath,
         port:process.env.PORT||80
     }
