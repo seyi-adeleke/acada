@@ -1,7 +1,7 @@
 {
-  "name": "virtual-standups",
-  "description": "",
-  "main": "app.js",
+  "name": "acada",
+  "description": "a video sharing app",
+  "main": "index.js",
   "authors": [
     "seyi"
   ],
