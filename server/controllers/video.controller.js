@@ -3,13 +3,28 @@ var Users = require('../models/users');
 
 exports.list = function(req, res) {
     Video.find().sort({ createdOn: 'desc'}).limit(12).exec(function(err, videos){
+        console.log(videos);
         Users.find({},function(err,users){
             res.render('videos',{videos: videos, user : req.user, users:users})
         })
     })
 
 };
+
+exports.getVideoByID = function(req, res) {
+    Video.findOne({_id:req.params.id}).exec(function(err,video){
+        Users.find({},function(err,users){
+            res.render('video',{video: video, user : req.user, users:users})
+        });
+    });
+
+};
+
+
+
 exports.getVideo = function (req, res) {
+
+
     res.render('newvideo', {user : req.user, firstName:req.body.firstName});
 };
 
