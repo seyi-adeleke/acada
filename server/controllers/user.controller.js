@@ -1,9 +1,7 @@
 exports.updateUser = function(req,res){
     var userUpdates = req.body;
-    if(req.user._id != userUpdates._id){
-        res.status(403);
-        return res.end();
-    }
+    console.log(req.body);
+
     req.user.firstName = userUpdates.firstName;
     req.user.email = userUpdates.email;
     req.user.password = userUpdates.password;

@@ -1,5 +1,5 @@
 var videoCtrl = require('../controllers/video.controller');
-
+var userCtrl = require("../controllers/user.controller")
 module.exports = function(app,passport){
 
     app.get('/', function (req, res) {
@@ -59,7 +59,9 @@ module.exports = function(app,passport){
             user : req.user // get the user out of session and pass to template
         });
     });
-
+    app.put('/profile', function(req,res){
+        return userCtrl.updateUser(req,res);
+    });
 
     app.get('/signup', function(req, res) {
         res.render('signup',{ message: req.flash('signupMessage'), user : req.user  });
