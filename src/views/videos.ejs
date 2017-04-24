@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <% include ./partials/head %>
+    <title>Notes</title>
+</head>
+<body>
+<header>
+    <% include ./partials/nav %>
+</header>
+<section>
+    <div class="container">
+        <div class="text-center">
+            <h1>Latest Videos</h1>
+
+        </div>
+        <div>
+            <!--<h2>Latest</h2>-->
+
+            <br />
+            <div class="container notes">
+                <div class="col-md-12 column list-group">
+                    <% videos.forEach(function(video) { %>
+                    <div class="list-group-item">
+                        <div> video from <em><strong><%=video.member%></strong></em> on:<%=video.createdOn.toDateString()%></div>
+                        <div><strong>Title: </strong> <%=video.title%></div>
+                        <div><strong>Youtube:</strong> <%=video.link%></div>
+                        <div><strong>Date Created:</strong> <%=video.createdOn%></div>
+                       
+                    </div>
+                    <% }); %>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+</section>
+</body>
+</html>
