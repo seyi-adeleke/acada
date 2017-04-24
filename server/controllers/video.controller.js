@@ -33,6 +33,7 @@ exports.createVideo = function(req, res) {
         member: req.user.firstName,
         title: req.body.title,
         link: req.body.link,
+        description:req.body.description,
         tags: req.body.tags
     });
     entry.save(function (err) {
