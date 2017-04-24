@@ -3,7 +3,7 @@ var rootPath = path.normalize(__dirname + "/../../");
 
 module.exports = {
     development:{
-        db:"mongodb://localhost/acada",
+        db:"mongodb://localhost/acada2",
         rootPath:rootPath,
         port:process.env.PORT||9000
 
