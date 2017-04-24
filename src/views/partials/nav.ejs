@@ -12,8 +12,8 @@
         </div>
         <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
             <ul class="nav navbar-nav">
-                <li><a href="/newvideo">New video </a></li>
-                <li><a href="/videos"> Videos </a></li>
+                <li><a href="/newvideo"><%= user ? "New video":''%> </a></li>
+                <li><a href="/videos"> <%= user ? "Videos":''%>  </a></li>
 
             </ul>
             <ul class="nav navbar-nav navbar-right">
