@@ -19,6 +19,9 @@ module.exports = function(app,passport){
     app.get('/videos', function(req, res){
         return videoCtrl.list(req, res);
     });
+    app.get('/videos/:id',function(req,res){
+        return  videoCtrl.getVideoByID(req,res);
+    });
 
 
     app.get('/login', function(req, res) {
