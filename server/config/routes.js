@@ -12,6 +12,13 @@ module.exports = function(app,passport){
         return videoCtrl.getVideo(req, res);
     });
 
+    app.post('/newvideo', function(req,res){
+        return videoCtrl.createVideo(req,res);
+    });
+
+    app.get('/videos', function(req, res){
+        return videoCtrl.list(req, res);
+    });
 
 
     app.get('/login', function(req, res) {
@@ -28,8 +35,9 @@ module.exports = function(app,passport){
     app.get('/signup', function(req, res) {
         res.render('signup',{ message: req.flash('signupMessage'), user : req.user  });
     });
+
     app.post('/signup', passport.authenticate('local-signup',{
-            successRedirect:'/Newnote',
+            successRedirect:'/',
             failureRedirect:'/signup',
             failureFlash: true
         }
