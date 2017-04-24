@@ -16,10 +16,10 @@ module.exports = function(app,passport){
         return videoCtrl.createVideo(req,res);
     });
 
-    app.get('/videos', function(req, res){
+    app.get('/videos',isLoggedIn, function(req, res){
         return videoCtrl.list(req, res);
     });
-    app.get('/videos/:id',function(req,res){
+    app.get('/videos/:id',isLoggedIn,function(req,res){
         return  videoCtrl.getVideoByID(req,res);
     });
 
