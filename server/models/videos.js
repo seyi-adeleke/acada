@@ -20,7 +20,7 @@ var videoSchema = new Schema({
         required: true,
         validate: requiredStringValidator },
     tags: {
-        type: Array,
+        type: String,
         required: true,
         validate: requiredStringValidator },
     createdOn: { type: Date,
